@@ -1,6 +1,8 @@
 module.exports = {
-  primary: {
-    l: '#1DA1F2',
-    d: '#A8DCFA',
+  light: {
+    primary: '#1DA1F2',
+  },
+  dark: {
+    primary: '#A8DCFA',
   },
 };
