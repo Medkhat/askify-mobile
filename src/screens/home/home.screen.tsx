@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 
-import AppSafeArea from 'components/safe-area';
+import AppSafeArea from '@/components/safe-area';
 
 export default function HomeScreen(): JSX.Element {
   return (
