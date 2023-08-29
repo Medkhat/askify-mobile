@@ -3,3 +3,6 @@ export enum ScreenNames {
   Chat = 'Chat',
   Settings = 'Settings',
 }
+export enum sheetnames {
+  languages = 'languages',
+}

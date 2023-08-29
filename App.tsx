@@ -19,6 +19,7 @@ import locales from '@/locales';
 import ChatScreen from '@/screens/chat/chat.screen';
 import HomeScreen from '@/screens/home/home.screen';
 import SettingsScreen from '@/screens/settings/settings.screen';
+import '@/sheets';
 import {ScreenNames} from '@/types/common.types';
 
 const Tab = createBottomTabNavigator();
