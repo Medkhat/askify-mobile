@@ -5,7 +5,7 @@ export default function AppSafeArea({
   children,
 }: PropsWithChildren): JSX.Element {
   return (
-    <SafeAreaView className="bg-white dark:bg-slate-800 flex-1 p-3">
+    <SafeAreaView className="bg-white dark:bg-zinc-900 flex-1 p-3">
       {children}
     </SafeAreaView>
   );

@@ -1,5 +1,9 @@
 import React from 'react';
-import {useColorScheme} from 'react-native';
+import {
+  ChatBubbleOvalLeftEllipsisIcon,
+  CogIcon,
+  HomeIcon,
+} from 'react-native-heroicons/outline';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {
@@ -8,37 +12,47 @@ import {
   NavigationContainer,
 } from '@react-navigation/native';
 import colors from 'assets/colors';
-import {ChatIcon, HomeIcon, SettingIcon} from 'components/icons';
-import ChatScreen from 'screens/chat';
-import HomeScreen from 'screens/home';
-import SettingsScreen from 'screens/settings';
+import {useColorScheme} from 'nativewind';
+import ChatScreen from 'screens/chat/chat.screen';
+import HomeHeaderLeft from 'screens/home/home-header-left';
+import HomeScreen from 'screens/home/home.screen';
+import SettingsScreen from 'screens/settings/settings.screen';
 import {ScreenNames} from 'types/common.types';
 
 const Tab = createBottomTabNavigator();
 
 function App(): JSX.Element {
-  const isDarkMode: boolean = useColorScheme() === 'dark';
+  const {colorScheme} = useColorScheme();
+  const isDarkMode: boolean = colorScheme === 'dark';
   return (
     <NavigationContainer theme={isDarkMode ? DarkTheme : DefaultTheme}>
       <Tab.Navigator
         initialRouteName={ScreenNames.Home}
         screenOptions={{
           tabBarActiveTintColor: colors.light.primary,
-          tabBarInactiveTintColor: 'black',
+          tabBarInactiveTintColor: isDarkMode ? '#fff' : '#000',
         }}>
         <Tab.Screen
           name={ScreenNames.Home}
-          options={{headerShown: false, tabBarIcon: HomeIcon}}
+          options={{
+            title: 'Home',
+            headerTitle: '',
+            tabBarIcon: HomeIcon,
+            headerLeft: HomeHeaderLeft,
+          }}
           component={HomeScreen}
         />
         <Tab.Screen
           name={ScreenNames.Chat}
-          options={{headerShown: false, tabBarIcon: ChatIcon}}
+          options={{
+            headerShown: false,
+            tabBarIcon: ChatBubbleOvalLeftEllipsisIcon,
+          }}
           component={ChatScreen}
         />
         <Tab.Screen
           name={ScreenNames.Settings}
-          options={{headerShown: false, tabBarIcon: SettingIcon}}
+          options={{headerShown: false, tabBarIcon: CogIcon}}
           component={SettingsScreen}
         />
       </Tab.Navigator>
