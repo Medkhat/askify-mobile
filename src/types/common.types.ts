@@ -6,3 +6,7 @@ export enum ScreenNames {
 export enum sheetnames {
   languages = 'languages',
 }
+export type LabelValue = {
+  label: string;
+  value: string;
+};

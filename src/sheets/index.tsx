@@ -6,9 +6,8 @@ import ActionsSheet, {
 
 import {useColorScheme} from 'nativewind';
 
+import LanguagesSheet from '@/sheets/languages.sheet';
 import {sheetnames} from '@/types/common.types';
-
-import LanguagesSheet from './languages.sheet';
 
 function ActionsSheetWrapper(
   props: PropsWithChildren<SheetProps>,
