@@ -1,6 +1,6 @@
 import {PropsWithChildren} from 'react';
 import ActionsSheet, {
-  SheetProps,
+  ActionSheetProps,
   registerSheet,
 } from 'react-native-actions-sheet';
 
@@ -10,13 +10,13 @@ import LanguagesSheet from '@/sheets/languages.sheet';
 import {sheetnames} from '@/types/common.types';
 
 function ActionsSheetWrapper(
-  props: PropsWithChildren<SheetProps>,
+  props: PropsWithChildren<ActionSheetProps>,
 ): JSX.Element {
   const {colorScheme} = useColorScheme();
   return (
     <ActionsSheet
-      id={props.sheetId}
-      useBottomSafeAreaPadding
+      {...props}
+      id={props.id}
       drawUnderStatusBar={false}
       containerStyle={{
         backgroundColor: colorScheme === 'dark' ? '#18181b' : '#fff',
