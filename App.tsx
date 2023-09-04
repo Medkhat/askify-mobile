@@ -1,4 +1,5 @@
 import React from 'react';
+import {useTranslation} from 'react-i18next';
 import {SheetProvider} from 'react-native-actions-sheet';
 import {
   ChatBubbleOvalLeftEllipsisIcon,
@@ -15,7 +16,7 @@ import {
 import {useColorScheme} from 'nativewind';
 
 import colors from '@/assets/colors';
-import locales from '@/locales';
+import '@/i18n';
 import ChatScreen from '@/screens/chat/chat.screen';
 import HomeScreen from '@/screens/home/home.screen';
 import SettingsScreen from '@/screens/settings/settings.screen';
@@ -27,6 +28,7 @@ const Tab = createBottomTabNavigator();
 function App(): JSX.Element {
   const {colorScheme} = useColorScheme();
   const isDarkMode: boolean = colorScheme === 'dark';
+  const {t} = useTranslation();
   return (
     <SheetProvider>
       <NavigationContainer theme={isDarkMode ? DarkTheme : DefaultTheme}>
@@ -40,7 +42,7 @@ function App(): JSX.Element {
           <Tab.Screen
             name={ScreenNames.Home}
             options={{
-              headerTitle: locales.home,
+              headerTitle: t('home'),
               tabBarIcon: HomeIcon,
             }}
             component={HomeScreen}
@@ -48,7 +50,7 @@ function App(): JSX.Element {
           <Tab.Screen
             name={ScreenNames.Chat}
             options={{
-              headerTitle: locales.chats,
+              headerTitle: t('chats'),
               tabBarIcon: ChatBubbleOvalLeftEllipsisIcon,
             }}
             component={ChatScreen}
@@ -56,7 +58,7 @@ function App(): JSX.Element {
           <Tab.Screen
             name={ScreenNames.Settings}
             options={{
-              headerTitle: locales.settings,
+              headerTitle: t('settings'),
               tabBarIcon: CogIcon,
             }}
             component={SettingsScreen}

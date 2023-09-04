@@ -1,34 +1,32 @@
+import {useTranslation} from 'react-i18next';
 import {Text, TouchableOpacity, View} from 'react-native';
 import {SheetManager, SheetProps} from 'react-native-actions-sheet';
-import {CheckCircleIcon} from 'react-native-heroicons/outline';
+import {CheckIcon} from 'react-native-heroicons/outline';
 
-import locales from '@/locales';
 import {ActionsSheetWrapper} from '@/sheets';
 import {sheetnames} from '@/types/common.types';
 import {languages} from '@/utils/constants';
 
 export default function LanguagesSheet(props: SheetProps): JSX.Element {
-  const currentLanguage = locales.getLanguage();
+  const {t, i18n} = useTranslation();
   const setLanguage = (value: string) => {
-    locales.setLanguage(value);
+    i18n.changeLanguage(value);
     SheetManager.hide(sheetnames.languages);
   };
   return (
-    <ActionsSheetWrapper id={props.sheetId}>
-      <View className="p-5">
-        <Text className="dark:text-white text-md font-bold mb-5">
-          {locales.chooseLanguage}
-        </Text>
-        {languages.map(language => (
-          <TouchableOpacity
-            key={language.value}
-            className="py-3 flex-row justify-between items-center"
-            onPress={() => setLanguage(language.value)}>
-            <Text className="dark:text-white">{language.label}</Text>
-            {currentLanguage === language.value && <CheckCircleIcon />}
-          </TouchableOpacity>
-        ))}
-      </View>
+    <ActionsSheetWrapper
+      id={props.sheetId}
+      title={t('chooseLanguage')}
+      sheetName={sheetnames.languages}>
+      {languages.map(language => (
+        <TouchableOpacity
+          key={language.value}
+          className="py-2 px-1 flex-row justify-between items-center"
+          onPress={() => setLanguage(language.value)}>
+          <Text className="dark:text-white">{language.label}</Text>
+          {i18n.language === language.value && <CheckIcon size={20} />}
+        </TouchableOpacity>
+      ))}
     </ActionsSheetWrapper>
   );
 }
