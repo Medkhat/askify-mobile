@@ -3,5 +3,8 @@
   "settings": "Настройки",
   "chats": "Чаты",
   "language": "Язык",
-  "chooseLanguage": "Выберите язык"
+  "chooseLanguage": "Выберите язык",
+  "about": "О Нас",
+  "new-features": "Новые возможности",
+  "faq": "FAQ"
 }

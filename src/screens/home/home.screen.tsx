@@ -1,14 +1,37 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Pressable} from 'react-native';
+import {XMarkIcon} from 'react-native-heroicons/outline';
+import InstaStory from 'react-native-insta-story';
 
+import {useColorScheme} from 'nativewind';
+
+import colors from '@/assets/colors';
 import AppSafeArea from '@/components/safe-area';
+import {useHighlights} from '@/utils/highlights';
 
 export default function HomeScreen(): JSX.Element {
+  const highlights = useHighlights();
+  const {colorScheme} = useColorScheme();
+  const avaTextColor = colorScheme === 'dark' ? '#fff' : '#000';
   return (
     <AppSafeArea>
-      <View className="justify-center items-center h-full px-4">
-        <Text className="text-lg text-black dark:text-white">Home Screen</Text>
-      </View>
+      <InstaStory
+        data={highlights}
+        duration={5}
+        avatarSize={70}
+        unPressedBorderColor={colors.light.primary}
+        renderCloseComponent={({onPress}) => (
+          <Pressable onPress={onPress}>
+            <XMarkIcon />
+          </Pressable>
+        )}
+        unPressedAvatarTextColor={avaTextColor}
+        pressedAvatarTextColor={avaTextColor}
+        storyImageStyle={{
+          objectFit: 'scale-down',
+          marginTop: 32,
+        }}
+      />
     </AppSafeArea>
   );
 }

@@ -38,11 +38,17 @@ function App(): JSX.Element {
             tabBarActiveTintColor: colors.light.primary,
             tabBarInactiveTintColor: isDarkMode ? '#fff' : '#000',
             headerTitleAlign: 'left',
+            headerStyle: {
+              backgroundColor: isDarkMode ? '#18181b' : '#fff',
+              borderBottomWidth: 0,
+            },
+            headerShadowVisible: false,
           }}>
           <Tab.Screen
             name={ScreenNames.Home}
             options={{
               headerTitle: t('home'),
+              title: t('home'),
               tabBarIcon: HomeIcon,
             }}
             component={HomeScreen}
@@ -51,6 +57,7 @@ function App(): JSX.Element {
             name={ScreenNames.Chat}
             options={{
               headerTitle: t('chats'),
+              title: t('chats'),
               tabBarIcon: ChatBubbleOvalLeftEllipsisIcon,
             }}
             component={ChatScreen}
@@ -59,6 +66,7 @@ function App(): JSX.Element {
             name={ScreenNames.Settings}
             options={{
               headerTitle: t('settings'),
+              title: t('settings'),
               tabBarIcon: CogIcon,
             }}
             component={SettingsScreen}

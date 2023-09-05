@@ -19,7 +19,7 @@ export default function SettingsScreen(): JSX.Element {
         <TouchableOpacity
           className="flex-row w-full justify-between py-5"
           onPress={handleLanguagesPress}>
-          <Text className="text-lg font-medium dark:text-white">
+          <Text className="dark:text-white text-lg font-medium">
             {t('language')}
           </Text>
           <ChevronRightIcon />
