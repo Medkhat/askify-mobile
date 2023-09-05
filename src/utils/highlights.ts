@@ -62,5 +62,18 @@ export const useHighlights = (): IUserStory[] => {
         },
       ],
     },
+    {
+      user_id: 4,
+      user_image:
+        'https://medkhat.sirv.com/askify/highlights/avatars/contacts.jpg',
+      user_name: t('contacts'),
+      stories: [
+        {
+          story_id: 1,
+          story_image:
+            'https://medkhat.sirv.com/askify/highlights/contacts1.jpg',
+        },
+      ],
+    },
   ];
 };

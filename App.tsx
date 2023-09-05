@@ -1,11 +1,7 @@
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {SheetProvider} from 'react-native-actions-sheet';
-import {
-  ChatBubbleOvalLeftEllipsisIcon,
-  CogIcon,
-  HomeIcon,
-} from 'react-native-heroicons/outline';
+import {CogIcon, HomeIcon} from 'react-native-heroicons/outline';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {
@@ -17,7 +13,6 @@ import {useColorScheme} from 'nativewind';
 
 import colors from '@/assets/colors';
 import '@/i18n';
-import ChatScreen from '@/screens/chat/chat.screen';
 import HomeScreen from '@/screens/home/home.screen';
 import SettingsScreen from '@/screens/settings/settings.screen';
 import '@/sheets';
@@ -39,7 +34,7 @@ function App(): JSX.Element {
             tabBarInactiveTintColor: isDarkMode ? '#fff' : '#000',
             headerTitleAlign: 'left',
             headerStyle: {
-              backgroundColor: isDarkMode ? '#18181b' : '#fff',
+              backgroundColor: isDarkMode ? '#18181b' : '#eeeeee',
               borderBottomWidth: 0,
             },
             headerShadowVisible: false,
@@ -52,15 +47,6 @@ function App(): JSX.Element {
               tabBarIcon: HomeIcon,
             }}
             component={HomeScreen}
-          />
-          <Tab.Screen
-            name={ScreenNames.Chat}
-            options={{
-              headerTitle: t('chats'),
-              title: t('chats'),
-              tabBarIcon: ChatBubbleOvalLeftEllipsisIcon,
-            }}
-            component={ChatScreen}
           />
           <Tab.Screen
             name={ScreenNames.Settings}

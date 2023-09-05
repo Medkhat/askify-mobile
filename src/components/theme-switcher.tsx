@@ -1,5 +1,6 @@
 import React from 'react';
 import {Switch, Text, View} from 'react-native';
+import {MoonIcon} from 'react-native-heroicons/outline';
 
 import {useColorScheme} from 'nativewind';
 
@@ -9,16 +10,20 @@ export default function ThemeSwitcher(): JSX.Element {
   const {colorScheme, toggleColorScheme} = useColorScheme();
   const isDarkMode = colorScheme === 'dark';
   return (
-    <View className="w-full flex-row justify-between items-center">
-      <Text className="text-lg font-medium text-black dark:text-white">
-        Dark Mode
-      </Text>
+    <View className="py-3 w-full flex-row justify-between items-center">
+      <View className="flex-row gap-2 items-center">
+        <MoonIcon size={20} />
+        <Text className="text-md font-medium text-black dark:text-white">
+          Dark Mode
+        </Text>
+      </View>
       <Switch
         trackColor={{false: '#767577', true: colors.light.primary}}
         thumbColor="#ffffff"
         ios_backgroundColor="#3e3e3e"
         onValueChange={toggleColorScheme}
         value={isDarkMode}
+        style={{transform: [{scaleX: 0.7}, {scaleY: 0.7}]}}
       />
     </View>
   );
