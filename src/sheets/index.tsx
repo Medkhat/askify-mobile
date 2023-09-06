@@ -8,8 +8,7 @@ import ActionsSheet, {
 } from 'react-native-actions-sheet';
 import {XCircleIcon} from 'react-native-heroicons/outline';
 
-import {useColorScheme} from 'nativewind';
-
+import useDarkMode from '@/hooks/dark-mode';
 import LanguagesSheet from '@/sheets/languages.sheet';
 import {sheetnames} from '@/types/common.types';
 
@@ -19,8 +18,7 @@ function ActionsSheetWrapper(
   >,
 ): JSX.Element {
   const {t} = useTranslation();
-  const {colorScheme} = useColorScheme();
-  const isDarkMode: boolean = colorScheme === 'dark';
+  const isDarkMode = useDarkMode();
   const handleClose = () => {
     SheetManager.hide(props.sheetName);
   };

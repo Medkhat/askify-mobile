@@ -1,12 +1,13 @@
 import React, {PropsWithChildren} from 'react';
-import {SafeAreaView} from 'react-native';
+import {SafeAreaView, View} from 'react-native';
 
 export default function AppSafeArea({
   children,
-}: PropsWithChildren): JSX.Element {
+  vClassName,
+}: PropsWithChildren<{vClassName?: string}>): JSX.Element {
   return (
-    <SafeAreaView className="bg-[#eeeeee] dark:bg-zinc-900 flex-1 p-3">
-      {children}
+    <SafeAreaView className="bg-[#eeeeee] dark:bg-zinc-900 flex-1">
+      <View className={vClassName ?? ''}>{children}</View>
     </SafeAreaView>
   );
 }

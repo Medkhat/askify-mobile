@@ -14,8 +14,8 @@ export default function SettingsScreen(): JSX.Element {
     SheetManager.show(sheetnames.languages);
   };
   return (
-    <AppSafeArea>
-      <View className="bg-white dark:bg-[#121212] rounded-lg py-2 px-5 mx-3 mt-10">
+    <AppSafeArea vClassName="px-3">
+      <View className="bg-white dark:bg-[#121212] rounded-lg py-2 px-5 mt-10">
         <TouchableOpacity
           className="flex-row w-full justify-between py-3 border-b border-b-[#eeeeee] dark:border-b-[#18181b]"
           onPress={handleLanguagesPress}>

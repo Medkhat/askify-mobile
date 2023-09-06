@@ -4,8 +4,10 @@
   "chats": "Chats",
   "language": "Language",
   "chooseLanguage": "Choose the language",
+  "dark": "Dark mode",
   "about": "About Us",
   "new-features": "New Features",
   "faq": "FAQ",
-  "contacts": "Contacts"
+  "contacts": "Contacts",
+  "latest-chats": "Latest Chats"
 }

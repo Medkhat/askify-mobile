@@ -2,10 +2,12 @@
   "home": "Басты",
   "settings": "Баптаулар",
   "chats": "Чаттар",
-  "language": "Тіл",
+  "language": "Қосымша тілі",
   "chooseLanguage": "Тілді таңдаңыз",
+  "dark": "Күңгірт режим",
   "about": "Біз туралы",
   "new-features": "Жаңа мүмкіндіктер",
   "faq": "FAQ",
-  "contacts": "Байланыс"
+  "contacts": "Байланыс",
+  "latest-chats": "Соңғы чаттар"
 }

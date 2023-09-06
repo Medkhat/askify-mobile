@@ -4,8 +4,10 @@
   "chats": "Чаты",
   "language": "Язык",
   "chooseLanguage": "Выберите язык",
+  "dark": "Темный режим",
   "about": "О Нас",
   "new-features": "Новые возможности",
   "faq": "FAQ",
-  "contacts": "Контакты"
+  "contacts": "Контакты",
+  "latest-chats": "Последние чаты"
 }

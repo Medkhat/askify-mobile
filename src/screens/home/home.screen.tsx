@@ -7,12 +7,14 @@ import {useColorScheme} from 'nativewind';
 
 import colors from '@/assets/colors';
 import AppSafeArea from '@/components/safe-area';
+import useDarkMode from '@/hooks/dark-mode';
+import ChatsList from '@/screens/home/chats';
 import {useHighlights} from '@/utils/highlights';
 
 export default function HomeScreen(): JSX.Element {
   const highlights = useHighlights();
-  const {colorScheme} = useColorScheme();
-  const avaTextColor = colorScheme === 'dark' ? '#fff' : '#000';
+  const isDarkMode = useDarkMode();
+  const avaTextColor = isDarkMode ? '#fff' : '#000';
   return (
     <AppSafeArea>
       <InstaStory
@@ -32,6 +34,7 @@ export default function HomeScreen(): JSX.Element {
           marginTop: 32,
         }}
       />
+      <ChatsList />
     </AppSafeArea>
   );
 }
