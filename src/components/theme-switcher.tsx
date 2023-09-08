@@ -5,7 +5,7 @@ import {MoonIcon} from 'react-native-heroicons/outline';
 
 import {useColorScheme} from 'nativewind';
 
-import colors from '@/assets/colors';
+import AppSwitch from './form/switch';
 
 export default function ThemeSwitcher(): JSX.Element {
   const {t} = useTranslation();
@@ -19,14 +19,7 @@ export default function ThemeSwitcher(): JSX.Element {
           {t('dark')}
         </Text>
       </View>
-      <Switch
-        trackColor={{false: '#767577', true: colors.light.primary}}
-        thumbColor="#ffffff"
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={toggleColorScheme}
-        value={isDarkMode}
-        style={{transform: [{scaleX: 0.7}, {scaleY: 0.7}]}}
-      />
+      <AppSwitch onValueChange={toggleColorScheme} value={isDarkMode} />
     </View>
   );
 }
