@@ -8,9 +8,10 @@ import ActionsSheet, {
 } from 'react-native-actions-sheet';
 import {XCircleIcon} from 'react-native-heroicons/outline';
 
-import useDarkMode from '@/hooks/dark-mode';
+import useDarkMode from '@/core/hooks/dark-mode';
+import {sheetnames} from '@/core/types/common.types';
+import ConfirmSheet from '@/sheets/confirm.sheet';
 import LanguagesSheet from '@/sheets/languages.sheet';
-import {sheetnames} from '@/types/common.types';
 
 function ActionsSheetWrapper(
   props: PropsWithChildren<
@@ -47,5 +48,6 @@ function ActionsSheetWrapper(
 }
 
 registerSheet(sheetnames.languages, LanguagesSheet);
+registerSheet(sheetnames.confirm, ConfirmSheet);
 
 export {ActionsSheetWrapper};

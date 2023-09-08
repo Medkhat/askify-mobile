@@ -9,5 +9,9 @@
   "new-features": "Жаңа мүмкіндіктер",
   "faq": "FAQ",
   "contacts": "Байланыс",
-  "latest-chats": "Соңғы чаттар"
+  "latest-chats": "Соңғы чаттар",
+  "logout": "Шығу",
+  "confirm": "Растаңыз",
+  "no": "Жоқ",
+  "sure-sign-out": "Сіз шығуды қалайсыз ба?"
 }

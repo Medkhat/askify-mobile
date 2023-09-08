@@ -3,9 +3,9 @@ import {Text, TouchableOpacity, View} from 'react-native';
 import {SheetManager, SheetProps} from 'react-native-actions-sheet';
 import {CheckIcon} from 'react-native-heroicons/outline';
 
+import {sheetnames} from '@/core/types/common.types';
+import {languages} from '@/core/utils/constants';
 import {ActionsSheetWrapper} from '@/sheets';
-import {sheetnames} from '@/types/common.types';
-import {languages} from '@/utils/constants';
 
 export default function LanguagesSheet(props: SheetProps): JSX.Element {
   const {t, i18n} = useTranslation();

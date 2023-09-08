@@ -9,5 +9,9 @@
   "new-features": "Новые возможности",
   "faq": "FAQ",
   "contacts": "Контакты",
-  "latest-chats": "Последние чаты"
+  "latest-chats": "Последние чаты",
+  "logout": "Выйти",
+  "confirm": "Внимание",
+  "yes": "Да",
+  "sure-sign-out": "Вы точно хотите выйти?"
 }

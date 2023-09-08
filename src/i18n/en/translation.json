@@ -9,5 +9,10 @@
   "new-features": "New Features",
   "faq": "FAQ",
   "contacts": "Contacts",
-  "latest-chats": "Latest Chats"
+  "latest-chats": "Latest Chats",
+  "logout": "Sign out",
+  "confirm": "Confirm",
+  "no": "No",
+  "yes": "Yes",
+  "sure-sign-out": "Are you sure you want to sign out?"
 }

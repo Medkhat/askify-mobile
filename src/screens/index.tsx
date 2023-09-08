@@ -4,10 +4,10 @@ import {CogIcon, HomeIcon} from 'react-native-heroicons/outline';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import colors from '@/assets/colors';
-import useDarkMode from '@/hooks/dark-mode';
+import useDarkMode from '@/core/hooks/dark-mode';
+import {ScreenNames} from '@/core/types/common.types';
 import HomeScreen from '@/screens/home/home.screen';
 import SettingsScreen from '@/screens/settings/settings.screen';
-import {ScreenNames} from '@/types/common.types';
 
 const Tab = createBottomTabNavigator();
 export default function AppTabs(): JSX.Element {

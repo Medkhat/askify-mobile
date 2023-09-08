@@ -7,9 +7,9 @@ import {useColorScheme} from 'nativewind';
 
 import colors from '@/assets/colors';
 import AppSafeArea from '@/components/safe-area';
-import useDarkMode from '@/hooks/dark-mode';
+import useDarkMode from '@/core/hooks/dark-mode';
+import {useHighlights} from '@/core/utils/highlights';
 import ChatsList from '@/screens/home/chats';
-import {useHighlights} from '@/utils/highlights';
 
 export default function HomeScreen(): JSX.Element {
   const highlights = useHighlights();

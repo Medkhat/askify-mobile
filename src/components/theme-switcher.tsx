@@ -7,12 +7,17 @@ import {useColorScheme} from 'nativewind';
 
 import AppSwitch from './form/switch';
 
-export default function ThemeSwitcher(): JSX.Element {
+export default function ThemeSwitcher({
+  vClassName,
+}: {
+  vClassName?: string;
+}): JSX.Element {
   const {t} = useTranslation();
   const {colorScheme, toggleColorScheme} = useColorScheme();
   const isDarkMode = colorScheme === 'dark';
   return (
-    <View className="py-3 w-full flex-row justify-between items-center">
+    <View
+      className={`py-3 w-full flex-row justify-between items-center ${vClassName}`}>
       <View className="flex-row gap-2 items-center">
         <MoonIcon size={20} />
         <Text className="text-md font-medium text-black dark:text-white">

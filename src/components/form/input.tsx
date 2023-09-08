@@ -1,5 +1,5 @@
 import {FieldValues, UseControllerProps, useController} from 'react-hook-form';
-import {TextInput, TextInputProps, View} from 'react-native';
+import {Text, TextInput, TextInputProps, View} from 'react-native';
 
 type InputProps<TFields extends FieldValues> = TextInputProps &
   UseControllerProps<TFields> & {
@@ -30,6 +30,9 @@ export default function Input<TFields extends FieldValues>({
       />
       {icon && (
         <View className="absolute right-2 top-2 text-gray-400">{icon}</View>
+      )}
+      {error && (
+        <Text className="text-red-500 text-xs mt-1 ml-2">{error.message}</Text>
       )}
     </View>
   );
