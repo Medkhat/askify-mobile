@@ -1,6 +1,14 @@
 import {useState} from 'react';
 import {useForm} from 'react-hook-form';
-import {ActivityIndicator, Alert, Image, Text, View} from 'react-native';
+import {useTranslation} from 'react-i18next';
+import {
+  ActivityIndicator,
+  Alert,
+  Image,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {
   EyeIcon,
   EyeSlashIcon,
@@ -24,6 +32,7 @@ import {ResponseError} from '@/core/types/common.types';
 export default function LoginScreen(): JSX.Element {
   const isDarkMode = useDarkMode();
   const setData = useAuthState(state => state.setData);
+  const {t} = useTranslation();
   const [isSecure, setIsSecure] = useState<boolean>(true);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
@@ -43,7 +52,7 @@ export default function LoginScreen(): JSX.Element {
         (error as AxiosError<ResponseError>).response?.data?.detail?.code ===
         'email_or_password_incorrect'
       ) {
-        Alert.alert('Authentication failed', 'Email or password is incorrect');
+        Alert.alert(t('auth-failed'), t('auth-failed-message'));
       }
     } finally {
       setIsSubmitting(false);
@@ -68,24 +77,24 @@ export default function LoginScreen(): JSX.Element {
         <ThemeSwitcher />
         <Input
           name="username"
-          placeholder="Username"
+          placeholder={t('username')}
           control={control}
           icon={<UserIcon color="#9ca3af" />}
-          rules={{required: "Username can't be empty"}}
+          rules={{required: t('not-empty')}}
         />
         <Input
           secureTextEntry={isSecure}
           name="password"
-          placeholder="Password"
+          placeholder={t('password')}
           control={control}
           icon={<LockClosedIcon color="#9ca3af" />}
-          rules={{required: "Password can't be empty"}}
+          rules={{required: t('not-empty')}}
         />
         <View className="w-full flex-row justify-between items-center mb-3">
           <View className="flex-row gap-2 items-center">
             {isSecure ? <EyeIcon size={20} /> : <EyeSlashIcon size={20} />}
             <Text className="text-md font-medium text-black dark:text-white">
-              Show password
+              {t('show-pwd')}
             </Text>
           </View>
           <AppSwitch onValueChange={handleShowPassword} value={!isSecure} />
@@ -97,9 +106,26 @@ export default function LoginScreen(): JSX.Element {
           {isSubmitting ? (
             <ActivityIndicator color="#ffffff" />
           ) : (
-            <Text className="dark:text-white text-[16px]">Sign in</Text>
+            <Text className="dark:text-white text-[16px]">{t('sign-in')}</Text>
           )}
         </Button>
+        <View className="my-4 w-full flex-row justify-between items-center">
+          <TouchableOpacity>
+            <Text className="text-[#1DA1F2]">{t('sign-up')}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text className="text-[#1DA1F2]">{t('forgot-pwd')}</Text>
+          </TouchableOpacity>
+        </View>
+        <TouchableOpacity className="w-full flex-row justify-center items-center rounded-lg py-3 border border-gray-300 dark:border-gray-700">
+          <Image
+            source={require('./../../images/google.png')}
+            className="mr-2"
+          />
+          <Text className="dark:text-white text-[16px]">
+            {t('sign-in-google')}
+          </Text>
+        </TouchableOpacity>
       </View>
     </AppSafeArea>
   );

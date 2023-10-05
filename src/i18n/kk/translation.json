@@ -10,8 +10,19 @@
   "faq": "FAQ",
   "contacts": "Байланыс",
   "latest-chats": "Соңғы чаттар",
-  "logout": "Шығу",
+  "sign-out": "Шығу",
+  "sign-in": "Кіру",
   "confirm": "Растаңыз",
   "no": "Жоқ",
-  "sure-sign-out": "Сіз шығуды қалайсыз ба?"
+  "yes": "Иә",
+  "sure-sign-out": "Сіз шығуды қалайсыз ба?",
+  "sign-in-google": "Google арқылы кіру",
+  "sign-up": "Тіркелу",
+  "forgot-pwd": "Құпия сөзді ұмыттыңыз ба?",
+  "show-pwd": "Құпия сөзді көрсету",
+  "username": "Логин",
+  "password": "Құпия сөз",
+  "auth-failed": "Кіру қателігі",
+  "auth-failed-message": "Логин немесе құпия сөз дұрыс емес",
+  "not-empty": "Бос болмауы керек"
 }

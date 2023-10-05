@@ -10,8 +10,19 @@
   "faq": "FAQ",
   "contacts": "Контакты",
   "latest-chats": "Последние чаты",
-  "logout": "Выйти",
+  "sign-out": "Выйти",
+  "sign-in": "Войти",
   "confirm": "Внимание",
   "yes": "Да",
-  "sure-sign-out": "Вы точно хотите выйти?"
+  "no": "Нет",
+  "sure-sign-out": "Вы точно хотите выйти?",
+  "sign-in-google": "Войти через Google",
+  "sign-up": "Регистрация",
+  "forgot-pwd": "Забыли пароль?",
+  "show-pwd": "Показать пароль",
+  "username": "Логин",
+  "password": "Пароль",
+  "auth-failed": "Ошибка авторизации",
+  "auth-failed-message": "Логин или пароль неверны",
+  "not-empty": "Поле не может быть пустым"
 }

@@ -1,5 +1,3 @@
-import {IUserStory} from 'react-native-insta-story';
-
 import {LabelValue} from '@/core/types/common.types';
 
 const languages: LabelValue[] = [

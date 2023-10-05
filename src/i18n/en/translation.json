@@ -10,9 +10,19 @@
   "faq": "FAQ",
   "contacts": "Contacts",
   "latest-chats": "Latest Chats",
-  "logout": "Sign out",
   "confirm": "Confirm",
   "no": "No",
   "yes": "Yes",
-  "sure-sign-out": "Are you sure you want to sign out?"
+  "sure-sign-out": "Are you sure you want to sign out?",
+  "sign-in-google": "Sign in with Google",
+  "sign-in": "Sign in",
+  "sign-out": "Sign out",
+  "sign-up": "Sign up",
+  "forgot-pwd": "Forgot password?",
+  "show-pwd": "Show password",
+  "username": "Username",
+  "password": "Password",
+  "auth-failed": "Authentication failed",
+  "auth-failed-message": "Email or password is incorrect",
+  "not-empty": "This field cannot be empty"
 }

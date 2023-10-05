@@ -50,7 +50,7 @@ export default function SettingsScreen(): JSX.Element {
           <View className="flex-row items-center gap-2">
             <ArrowLeftOnRectangleIcon color="#ef4444" size={20} />
             <Text className="text-red-500 text-md font-medium">
-              {t('logout')}
+              {t('sign-out')}
             </Text>
           </View>
           <ChevronRightIcon color="#ef4444" size={20} />
