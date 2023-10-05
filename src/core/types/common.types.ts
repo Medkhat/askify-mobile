@@ -6,6 +6,8 @@ export enum ScreenNames {
 export enum sheetnames {
   languages = 'languages',
   confirm = 'confirm',
+  signUp = 'signUp',
+  forgot = 'forgot',
 }
 export enum StorageKeys {
   user = 'user-data',

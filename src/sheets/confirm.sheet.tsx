@@ -1,5 +1,5 @@
 import {useTranslation} from 'react-i18next';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {Text, View} from 'react-native';
 import {SheetManager, SheetProps} from 'react-native-actions-sheet';
 
 import Button from '@/components/form/button';

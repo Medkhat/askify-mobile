@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import {SheetManager} from 'react-native-actions-sheet';
 import {
   EyeIcon,
   EyeSlashIcon,
@@ -27,7 +28,7 @@ import {signIn} from '@/core/api/auth.api';
 import useDarkMode from '@/core/hooks/dark-mode';
 import {useAuthState} from '@/core/store';
 import {AuthFields} from '@/core/types/auth.types';
-import {ResponseError} from '@/core/types/common.types';
+import {ResponseError, sheetnames} from '@/core/types/common.types';
 
 export default function LoginScreen(): JSX.Element {
   const isDarkMode = useDarkMode();
@@ -36,9 +37,6 @@ export default function LoginScreen(): JSX.Element {
   const [isSecure, setIsSecure] = useState<boolean>(true);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
-  const handleShowPassword = () => {
-    setIsSecure(!isSecure);
-  };
   const {handleSubmit, control} = useForm<AuthFields>({
     defaultValues: {username: '', password: ''},
   });
@@ -57,6 +55,16 @@ export default function LoginScreen(): JSX.Element {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const handleShowPassword = () => {
+    setIsSecure(!isSecure);
+  };
+  const handleSignUpPress = () => {
+    SheetManager.show(sheetnames.signUp);
+  };
+  const handleForgotPress = () => {
+    SheetManager.show(sheetnames.forgot);
   };
 
   return (
@@ -110,10 +118,10 @@ export default function LoginScreen(): JSX.Element {
           )}
         </Button>
         <View className="my-4 w-full flex-row justify-between items-center">
-          <TouchableOpacity>
+          <TouchableOpacity onPress={handleSignUpPress}>
             <Text className="text-[#1DA1F2]">{t('sign-up')}</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={handleForgotPress}>
             <Text className="text-[#1DA1F2]">{t('forgot-pwd')}</Text>
           </TouchableOpacity>
         </View>

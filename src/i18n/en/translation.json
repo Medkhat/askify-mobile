@@ -19,9 +19,12 @@
   "sign-out": "Sign out",
   "sign-up": "Sign up",
   "forgot-pwd": "Forgot password?",
+  "reset-pwd": "Reset password",
   "show-pwd": "Show password",
   "username": "Username",
   "password": "Password",
+  "sign-up-text": "If you want to sign up, please complete this on the website and then come back to the app",
+  "forgot-text": "If you forgot your password, please reset it on the website and try again",
   "auth-failed": "Authentication failed",
   "auth-failed-message": "Email or password is incorrect",
   "not-empty": "This field cannot be empty"

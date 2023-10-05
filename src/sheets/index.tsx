@@ -11,7 +11,9 @@ import {XCircleIcon} from 'react-native-heroicons/outline';
 import useDarkMode from '@/core/hooks/dark-mode';
 import {sheetnames} from '@/core/types/common.types';
 import ConfirmSheet from '@/sheets/confirm.sheet';
+import ForgotSheet from '@/sheets/forgot.sheet';
 import LanguagesSheet from '@/sheets/languages.sheet';
+import SignUpSheet from '@/sheets/sign-up.sheet';
 
 function ActionsSheetWrapper(
   props: PropsWithChildren<
@@ -49,5 +51,7 @@ function ActionsSheetWrapper(
 
 registerSheet(sheetnames.languages, LanguagesSheet);
 registerSheet(sheetnames.confirm, ConfirmSheet);
+registerSheet(sheetnames.signUp, SignUpSheet);
+registerSheet(sheetnames.forgot, ForgotSheet);
 
 export {ActionsSheetWrapper};
